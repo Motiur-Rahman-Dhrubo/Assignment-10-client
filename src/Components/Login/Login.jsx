@@ -14,6 +14,22 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    const handleGoogleSignOnClick = (e) => {
+        e.preventDefault();
+        handleGoogleSignUp()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch((error) => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                });
+            });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -65,7 +81,7 @@ const Login = () => {
 
                     <div className="form-control mt-6 gap-4">
                         <input className="btn btn-primary" type="submit" value="Login" />
-                        <button className="btn btn-neutral">Sign in with Google</button>
+                        <button onClick={handleGoogleSignOnClick} className="btn btn-neutral">Sign in with Google</button>
                     </div>
                     <p className="mt-2 text-white">Don't have an account? <Link to="/register" className="link-hover font-bold text-blue-600 bg-white px-1 rounded-lg">Register</Link></p>
                 </form>
