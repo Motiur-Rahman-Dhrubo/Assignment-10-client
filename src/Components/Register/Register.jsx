@@ -39,7 +39,6 @@ const Register = () => {
                 position: "top-center",
                 autoClose: 3000,
             });
-            console.log(user);
             updateUserProfile({ displayName: name, photoURL: photo })
                 .then(() => {
                     navigate("/");
