@@ -4,10 +4,10 @@ const NavBar = () => {
 
     const links = <>
         <li><NavLink className='py-1 px-3' to="/">Home</NavLink></li>
-        <li><NavLink className='py-1 px-3' to="/brands">All Reviews</NavLink></li>
-        <li><NavLink className='py-1 px-3' to="/my-profile">Add Review</NavLink></li>
-        <li><NavLink className='py-1 px-3' to="/about-dev">My Reviews</NavLink></li>
-        <li><NavLink className='py-1 px-3' to="/about-dev">Game WatchList</NavLink></li>
+        <li><NavLink className='py-1 px-3' to="/reviews">All Reviews</NavLink></li>
+        <li><NavLink className='py-1 px-3' to="/addReview">Add Review</NavLink></li>
+        <li><NavLink className='py-1 px-3' to="/myReviews">My Reviews</NavLink></li>
+        <li><NavLink className='py-1 px-3' to="/myWatchList">Game WatchList</NavLink></li>
     </>
     const joining = <>
         <Link to="/login" className="btn">Login</Link>
