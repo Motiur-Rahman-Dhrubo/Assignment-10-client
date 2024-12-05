@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className='bg-neutral'>
+        <footer className='bg-neutral mt-10'>
             <div className="footer text-neutral-content items-center py-4 w-11/12 mx-auto">
                 <aside className="grid-flow-col items-center">
                     <Link to='/' className="font-bold text-xl italic w-[140px]">Chill Gamer</Link>
