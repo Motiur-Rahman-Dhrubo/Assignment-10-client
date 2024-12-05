@@ -1,9 +1,16 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
 
+    const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+
     const [error, setError] = useState({});
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,36 +32,86 @@ const Register = () => {
         } else {
             setError((prev) => ({ ...prev, password: null }));
         }
+        createNewUser(email, password).then((result) => {
+            const user = result.user;
+            setUser(user);
+            toast.success("Successfully Registered", {
+                position: "top-center",
+                autoClose: 3000,
+            });
+            console.log(user);
+            updateUserProfile({ displayName: name, photoURL: photo })
+                .then(() => {
+                    navigate("/");
+                }).catch((err) => {
+                    toast.error(err.message, {
+                        position: "top-center",
+                        autoClose: 3000,
+                    });
+                });
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            toast.error(`${errorCode}: ${errorMessage}`, {
+                position: "top-center",
+                autoClose: 3000,
+            });
+        });
     }
 
     return (
         <div className="min-h-screen flex justify-center items-center mt-5 w-11/12 mx-auto">
+            <ToastContainer />
             <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-sm shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400">
                 <form onSubmit={handleSubmit} className="card-body">
+
+                    {/* name */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Name</span>
                         </label>
                         <input name="name" type="text" placeholder="name" className="input input-bordered" required />
                     </div>
+
+                    {
+                        error.name && (
+                            <label className="label">
+                                <p className="text-red-600">{error.name}</p>
+                            </label>
+                        )
+                    }
+
+                    {/* email */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Email</span>
                         </label>
                         <input name="email" type="email" placeholder="email" className="input input-bordered" required />
                     </div>
+
+                    {/* photo */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Photo URL</span>
                         </label>
                         <input name="photo" type="text" placeholder="photo URL" className="input input-bordered" />
                     </div>
+
+                    {/* password */}
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text text-white">Password</span>
                         </label>
                         <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                     </div>
+
+                    {error.password && (
+                        <label className="label">
+                            <p className="text-red-600">{error.password}</p>
+                        </label>
+                    )}
+
+                    {/* submit */}
                     <div className="form-control mt-6 gap-4">
                         <input className="btn btn-primary" type="submit" value="Register Now" />
                     </div>
