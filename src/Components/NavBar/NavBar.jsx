@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { Tooltip } from 'react-tooltip'
 
 const NavBar = () => {
 
@@ -54,8 +55,9 @@ const NavBar = () => {
                     <div className="navbar-end">
                         <div className='hidden gap-2 lg:flex items-center'>
                             {
-                                user?.photoURL ? <img src={user?.photoURL} alt="user photo" className='w-12 aspect-[1/1] rounded-full border border-black object-cover' /> : <img src="/assets/user.png" alt="user photo" className='w-12 rounded-full' />
+                                user?.photoURL ? <img data-tooltip-id="user-name" data-tooltip-content={user.displayName} data-tooltip-place="bottom" src={user.photoURL} alt="user photo" className='w-12 aspect-[1/1] rounded-full border border-black object-cover' /> : <img data-tooltip-id="user-name" data-tooltip-content={user.displayName} data-tooltip-place="bottom" src="/assets/user.png" alt="user photo" className='w-12 rounded-full' />
                             }
+                            <Tooltip id="user-name" />
                             <button className='btn' onClick={logOut}>Log Out</button>
                         </div>
                         <div className='block lg:hidden'>
