@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddReview = () => {
 
     const { user } = useContext(AuthContext);
 
-    const handleSubmit = (e) => {
+    const handleAddReview = (e) => {
         e.preventDefault();
         const game_image = e.target.image.value;
         const game_title = e.target.title.value;
@@ -15,14 +17,35 @@ const AddReview = () => {
         const genres = e.target.genres.value;
         const user_email = e.target.email.value;
         const user_name = e.target.name.value;
+        const newReview = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name }
 
-        console.log(game_image, game_title, review, rating, publish_year, genres, user_email, user_name)
-    }
+        console.log(newReview)
+
+        // send data
+        fetch('http://localhost:5000/reviews', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newReview)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if (data.insertedId){
+                toast.success("Review Successfully Added", {
+                    position: "top-center",
+                    autoClose: 2000,
+                });
+            };
+        });
+    };
 
     return (
         <div className="min-h-screen flex justify-center items-center mt-5 w-11/12 mx-auto">
+            <ToastContainer />
             <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-xl shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400">
-                <form onSubmit={handleSubmit} className="card-body">
+                <form onSubmit={handleAddReview} className="card-body">
                     
                     {/* Game Cover Image */}
                     <div className="form-control" >
