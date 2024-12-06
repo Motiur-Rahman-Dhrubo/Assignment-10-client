@@ -37,15 +37,15 @@ const Register = () => {
             setUser(user);
             toast.success("Successfully Registered", {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 2000,
             });
             updateUserProfile({ displayName: name, photoURL: photo })
                 .then(() => {
-                    navigate("/");
+                    setTimeout(() => navigate("/"), 2000);
                 }).catch((err) => {
                     toast.error(err.message, {
                         position: "top-center",
-                        autoClose: 3000,
+                        autoClose: 2000,
                     });
                 });
         }).catch((error) => {
@@ -53,7 +53,7 @@ const Register = () => {
             const errorMessage = error.message;
             toast.error(`${errorCode}: ${errorMessage}`, {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 2000,
             });
         });
     }

@@ -20,12 +20,16 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                navigate(location?.state ? location.state : "/");
+                toast.success("Successfully Sign in With Your Google", {
+                    position: "top-center",
+                    autoClose: 2000,
+                });
+                setTimeout(() => navigate(location?.state ? location.state : "/"), 2000);
             })
             .catch((error) => {
                 toast.error(error.message, {
                     position: "top-center",
-                    autoClose: 3000,
+                    autoClose: 2000,
                 });
             });
     };
@@ -40,9 +44,9 @@ const Login = () => {
             setUser(user);
             toast.success("Successfully Login", {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 2000,
             });
-            navigate(location?.state ? location.state : "/");
+            setTimeout(() => navigate(location?.state ? location.state : "/"), 2000);
         }).catch((err) => {
             setError({ ...error, login: err.code })
         });
@@ -77,7 +81,6 @@ const Login = () => {
                             </label>
                         )
                     }
-
 
                     <div className="form-control mt-6 gap-4">
                         <input className="btn btn-primary" type="submit" value="Login" />
