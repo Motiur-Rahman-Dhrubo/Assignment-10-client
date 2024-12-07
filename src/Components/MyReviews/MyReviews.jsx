@@ -1,15 +1,44 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyReviews = () => {
 
     const loadReviews = useLoaderData();
     const { user } = useContext(AuthContext);
-    console.log(user.email);
 
-    const userReviews = loadReviews.filter(review => review.user_email === user.email);
+    const [userReviews, setUserReviews] = useState( loadReviews.filter(review => review.user_email === user.email));
+
+    const handleDelete = (_id) => {
+        Swal.fire({
+            title: "Are you sure you want to delete?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirm Delete"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/reviews/${_id}`, {
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0){
+                        setUserReviews(prevReviews => prevReviews.filter(review => review._id !== _id));
+                        Swal.fire({
+                            title: "Successfully Deleted!",
+                            text: "Your review has been deleted.",
+                            icon: "success"
+                        });
+                    }
+                })
+            }
+        });
+    }
 
     return (
         <>
@@ -26,10 +55,9 @@ const MyReviews = () => {
                                         <ReactStars count={5} value={review.rating} size={20} edit={false} activeColor="#ffd700" />
                                     </div>
                                     <p className="text-base font-medium flex-grow">Genres: {review.genres}</p>
-                                    <p className="text-base font-medium flex-grow">{review.user_email}</p>
                                     <div className="flex gap-2">
                                         <button className="btn btn-sm btn-accent flex-1">Update</button>
-                                        <button className="btn btn-sm btn-secondary flex-1">Delete</button>
+                                        <button onClick={() => handleDelete(review._id)} className="btn btn-sm btn-secondary flex-1">Delete</button>
                                     </div>
                                 </div>
                             </div>
