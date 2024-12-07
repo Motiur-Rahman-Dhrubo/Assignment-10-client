@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto px-0">
-            <div className="navbar-start">
+            <div className="navbar-start flex-grow">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
                         <svg
@@ -52,7 +52,7 @@ const NavBar = () => {
             </div>
             {
                 user ? (
-                    <div className="navbar-end">
+                    <div className="navbar-end md:w-1/2 w-min">
                         <div className='hidden gap-2 lg:flex items-center'>
                             {
                                 user?.photoURL ? <img data-tooltip-id="user-name" data-tooltip-content={user.displayName} data-tooltip-place="bottom" src={user.photoURL} alt="user photo" className='w-12 aspect-[1/1] rounded-full border border-black object-cover' /> : <img data-tooltip-id="user-name" data-tooltip-content={user.displayName} data-tooltip-place="bottom" src="/assets/user.png" alt="user photo" className='w-12 rounded-full' />
@@ -75,7 +75,7 @@ const NavBar = () => {
                     </div>
                 ) :
                     (
-                        <div className="navbar-end">
+                        <div className="navbar-end md:w-1/2 w-min">
                             <div className='gap-2 hidden lg:flex'>
                                 {joining}
                             </div>

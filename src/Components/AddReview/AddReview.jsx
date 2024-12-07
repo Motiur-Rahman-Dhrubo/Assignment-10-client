@@ -19,8 +19,6 @@ const AddReview = () => {
         const user_name = e.target.name.value;
         const newReview = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name }
 
-        console.log(newReview)
-
         // send data
         fetch('http://localhost:5000/reviews', {
             method: 'post',
@@ -31,14 +29,17 @@ const AddReview = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             if (data.insertedId){
                 toast.success("Review Successfully Added", {
                     position: "top-center",
                     autoClose: 2000,
                 });
+                e.target.reset();
+                e.target.year.value = "";
+                e.target.genres.value = "";
             };
-        });
+        })
+        .catch((err) => console.error(err));
     };
 
     return (
