@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
@@ -56,7 +56,7 @@ const MyReviews = () => {
                                     </div>
                                     <p className="text-base font-medium flex-grow">Genres: {review.genres}</p>
                                     <div className="flex gap-2">
-                                        <button className="btn btn-sm btn-accent flex-1">Update</button>
+                                        <Link to={`/updateReview/${review._id}`} className="btn btn-sm btn-accent flex-1">Update</Link>
                                         <button onClick={() => handleDelete(review._id)} className="btn btn-sm btn-secondary flex-1">Delete</button>
                                     </div>
                                 </div>
