@@ -1,14 +1,43 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
+import { AuthContext } from "../../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ReviewDetails = () => {
+
+    const { user } = useContext(AuthContext);
 
     const [loading, setLoading] = useState(true);
 
     const reviewData = useLoaderData();
     const { game_image, game_title, review, rating, publish_year, genres, user_email, user_name } = reviewData;
+
+    const addToWatchList = () => {
+        const loggedUserName = user.displayName;
+        const loggedUserEmail = user.email;
+        const newWatchListData = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name, loggedUserEmail, loggedUserName };
+
+        fetch('http://localhost:5000/watch_list', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newWatchListData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success(`${game_title} Successfully Added to WatchList`, {
+                        position: "top-center",
+                        autoClose: 2000,
+                    });
+                };
+            })
+            .catch((err) => console.error(err));
+    }
 
     useEffect(() => {
         if (reviewData) {
@@ -22,7 +51,7 @@ const ReviewDetails = () => {
 
     return (
         <div className="flex justify-center items-center mt-5 w-11/12 mx-auto">
-            {/* <ToastContainer /> */}
+            <ToastContainer />
             <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-2xl shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400 p-5">
                 <img src={game_image} alt="game cover image" className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full aspect-[5/3] object-cover" />
                 <div className="mt-4 text-black flex flex-col bg-[rgba(255,255,255,0.3)] flex-grow rounded-lg p-1">
@@ -39,7 +68,7 @@ const ReviewDetails = () => {
                     </div>
                     <p className="md:text-lg text-base font-medium mt-2">Reviewer's Name: <span className="font-normal">{user_name}</span></p>
                     <p className="md:text-lg text-base font-medium mt-2">Reviewer's Email: <span className="font-normal">{user_email}</span></p>
-                    <button className="btn md:btn-md btn-sm btn-neutral mt-2">Add to WatchList</button>
+                    <button onClick={addToWatchList} className="btn md:btn-md btn-sm btn-neutral mt-2">Add to WatchList</button>
                 </div>
             </div>
         </div>

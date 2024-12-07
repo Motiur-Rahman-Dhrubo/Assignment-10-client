@@ -1,11 +1,13 @@
 import { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Tooltip } from 'react-tooltip'
 
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const links = <>
         <li><NavLink className='py-1 px-3' to="/">Home</NavLink></li>
@@ -18,6 +20,11 @@ const NavBar = () => {
         <Link to="/login" className="btn">Login</Link>
         <Link to="/register" className="btn">Register</Link>
     </>
+
+    const handleLogout = () => {
+        logOut();
+        navigate("/");
+    }
 
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto px-0">
@@ -58,7 +65,7 @@ const NavBar = () => {
                                 user?.photoURL ? <img data-tooltip-id="user-name" data-tooltip-content={user.displayName} data-tooltip-place="bottom" src={user.photoURL} alt="user photo" className='w-12 aspect-[1/1] rounded-full border border-black object-cover' /> : <img data-tooltip-id="user-name" data-tooltip-content={user.displayName} data-tooltip-place="bottom" src="/assets/user.png" alt="user photo" className='w-12 rounded-full' />
                             }
                             <Tooltip id="user-name" />
-                            <button className='btn' onClick={logOut}>Log Out</button>
+                            <button className='btn' onClick={handleLogout}>Log Out</button>
                         </div>
                         <div className='block lg:hidden'>
                             <details className="dropdown">
@@ -68,7 +75,7 @@ const NavBar = () => {
                                         user?.photoURL ? <img src={user.photoURL} alt="user photo" className='w-12 aspect-[1/1] rounded-full border border-black object-cover' /> : <img src="/assets/user.png" alt="user photo" className='w-12 rounded-full' />
                                     }
                                     <h2 className='text-center'>{user.displayName}</h2>
-                                    <button className='btn w-full min-w-[150px]' onClick={logOut}>Log Out</button>
+                                    <button className='btn w-full min-w-[150px]' onClick={handleLogout}>Log Out</button>
                                 </ul>
                             </details>
                         </div>
