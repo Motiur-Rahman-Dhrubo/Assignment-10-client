@@ -1,9 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import { useEffect, useState } from "react";
+import Loading from "../Loading/Loading";
 
 const ReviewDetails = () => {
 
-    const { game_image, game_title, review, rating, publish_year, genres, user_email, user_name } = useLoaderData();
+    const [loading, setLoading] = useState(true);
+
+    const reviewData = useLoaderData();
+    const { game_image, game_title, review, rating, publish_year, genres, user_email, user_name } = reviewData;
+
+    useEffect(() => {
+        if (reviewData) {
+            setLoading(false);
+        }
+    }, [reviewData]);
+
+    if (loading) {
+        return <Loading></Loading>
+    };
 
     return (
         <div className="flex justify-center items-center mt-5 w-11/12 mx-auto">

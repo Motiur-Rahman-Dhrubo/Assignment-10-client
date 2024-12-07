@@ -1,9 +1,23 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import { useEffect, useState } from "react";
+import Loading from "../Loading/Loading";
 
 const AllReviews = () => {
 
+    const [loading, setLoading] = useState(true);
+
     const loadReviews = useLoaderData();
+
+    useEffect(() => {
+        if (loadReviews) {
+            setLoading(false);
+        }
+    }, [loadReviews]);
+
+    if (loading) {
+        return <Loading></Loading>;
+    };
 
     return (
         <div className="w-11/12 mt-5 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
