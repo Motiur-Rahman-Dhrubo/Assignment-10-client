@@ -67,6 +67,7 @@ const Router = createBrowserRouter([
                         <GameWatchList></GameWatchList>
                     </PrivateRoute>
                 ),
+                loader: () => fetch('http://localhost:5000/watch_list'),
             },
             {
                 path: "/login",

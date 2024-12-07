@@ -16,6 +16,15 @@ const ReviewDetails = () => {
     const { game_image, game_title, review, rating, publish_year, genres, user_email, user_name } = reviewData;
 
     const addToWatchList = () => {
+
+        if (!user) {
+            toast.error("You must be logged in to add to the WatchList", {
+                position: "top-center",
+                autoClose: 2000,
+            });
+            return;
+        }
+        
         const loggedUserName = user.displayName;
         const loggedUserEmail = user.email;
         const newWatchListData = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name, loggedUserEmail, loggedUserName };
