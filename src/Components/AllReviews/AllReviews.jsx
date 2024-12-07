@@ -1,11 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
 const AllReviews = () => {
 
     const loadReviews = useLoaderData();
-
-    console.log(loadReviews);
 
     return (
         <div className="w-11/12 mt-5 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
@@ -16,11 +14,11 @@ const AllReviews = () => {
                         <div className="mt-4 text-black flex flex-col bg-[rgba(255,255,255,0.3)] flex-grow gap-2 rounded-lg p-1">
                             <h2 className="text-xl font-bold">Game Title: {review.game_title}</h2>
                             <div className="flex gap-2 items-center">
-                                <p className="text-base font-medium">Ratings: </p>
-                                <ReactStars count={5} value={review.rating} size={20} activeColor="#ffd700" />
+                                <p className="text-base font-medium">Ratings:</p>
+                                <ReactStars count={5} value={review.rating} size={20} edit={false} activeColor="#ffd700" />
                             </div>
                             <p className="text-base font-medium flex-grow">Genres: {review.genres}</p>
-                            <button className="btn btn-sm btn-neutral">Explore Details</button>
+                            <Link to={`/review/${review._id}`} className="btn btn-sm btn-neutral">Explore Details</Link>
                         </div>
                     </div>
                 ))
