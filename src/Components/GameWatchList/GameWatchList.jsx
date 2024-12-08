@@ -27,7 +27,7 @@ const GameWatchList = () => {
         <>
             {watchListData.length > 0 ? (
                 <div className="w-11/12 mx-auto mt-5 min-h-screen flex">
-                    <div className="overflow-x-auto card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400 p-5">
+                    <div className="overflow-x-auto card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full shrink-0 shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400 p-5">
                         <table className="table text-white min-w-[500px]">
                             {/* head */}
                             <thead className="text-white text-base">

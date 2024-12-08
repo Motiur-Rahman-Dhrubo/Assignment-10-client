@@ -61,7 +61,7 @@ const ReviewDetails = () => {
     return (
         <div className="flex justify-center items-center mt-5 w-11/12 mx-auto">
             <ToastContainer />
-            <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-2xl shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400 p-5">
+            <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-2xl shrink-0 shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400 p-5">
                 <img src={game_image} alt="game cover image" className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full aspect-[5/3] object-cover" />
                 <div className="mt-4 text-black flex flex-col bg-[rgba(255,255,255,0.3)] flex-grow rounded-lg p-1">
                     <h2 className="md:text-2xl text-xl font-bold">Game Title: {game_title}</h2>

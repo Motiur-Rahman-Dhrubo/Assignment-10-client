@@ -44,7 +44,7 @@ const UpdateReview = () => {
     return (
         <div className="min-h-screen flex justify-center items-center mt-5 w-11/12 mx-auto">
             <ToastContainer />
-            <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-xl shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400">
+            <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-xl shrink-0 shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400">
                 <form className="card-body" onSubmit={handelUpdateReview}>
 
                     {/* Game Cover Image */}

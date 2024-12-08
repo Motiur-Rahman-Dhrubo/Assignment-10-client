@@ -46,7 +46,7 @@ const MyReviews = () => {
                 <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         userReviews.map(review => (
-                            <div key={review._id} className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400 p-4 flex flex-col">
+                            <div key={review._id} className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400 p-4 flex flex-col">
                                 <img src={review.game_image} alt="game cover image" className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full aspect-[5/3] object-cover" />
                                 <div className="mt-4 text-black flex flex-col bg-[rgba(255,255,255,0.3)] flex-grow gap-2 rounded-lg p-1">
                                     <h2 className="text-xl font-bold">Game Title: {review.game_title}</h2>
