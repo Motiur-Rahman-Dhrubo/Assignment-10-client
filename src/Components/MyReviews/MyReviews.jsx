@@ -9,7 +9,7 @@ const MyReviews = () => {
     const loadReviews = useLoaderData();
     const { user } = useContext(AuthContext);
 
-    const [userReviews, setUserReviews] = useState( loadReviews.filter(review => review.user_email === user.email));
+    const [userReviews, setUserReviews] = useState(loadReviews.filter(review => review.user_email === user.email));
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -22,27 +22,27 @@ const MyReviews = () => {
             confirmButtonText: "Confirm Delete"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/reviews/${_id}`, {
+                fetch(`https://chill-game-server-tau.vercel.app/reviews/${_id}`, {
                     method: 'DELETE'
                 })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0){
-                        setUserReviews(prevReviews => prevReviews.filter(review => review._id !== _id));
-                        Swal.fire({
-                            title: "Successfully Deleted!",
-                            text: "Your review has been deleted.",
-                            icon: "success"
-                        });
-                    }
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            setUserReviews(prevReviews => prevReviews.filter(review => review._id !== _id));
+                            Swal.fire({
+                                title: "Successfully Deleted!",
+                                text: "Your review has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
             }
         });
     }
 
     return (
         <div className="w-11/12 mt-5 mx-auto min-h-screen">
-             {userReviews.length > 0 ? (
+            {userReviews.length > 0 ? (
                 <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         userReviews.map(review => (
@@ -64,11 +64,11 @@ const MyReviews = () => {
                         ))
                     }
                 </div>
-             ) : (
+            ) : (
                 <div className="min-h-screen flex justify-center items-center w-11/12 mx-auto">
-                        <h1 className="lg:text-5xl md:text-3xl text-xl font-bold text-center text-red-500">No reviews have been added by you!</h1>
+                    <h1 className="lg:text-5xl md:text-3xl text-xl font-bold text-center text-red-500">No reviews have been added by you!</h1>
                 </div>
-             )}
+            )}
         </div>
     );
 };

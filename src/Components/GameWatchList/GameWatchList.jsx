@@ -12,15 +12,15 @@ const GameWatchList = () => {
     const [watchListData, setWatchListData] = useState(loadWatchList.filter(WatchList => WatchList.loggedUserEmail === user.email));
 
     const handleDeleteWL = (_id) => {
-        fetch(`http://localhost:5000/watch_list/${_id}`, {
+        fetch(`https://chill-game-server-tau.vercel.app/watch_list/${_id}`, {
             method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.deletedCount > 0) {
-                setWatchListData(prevWLData => prevWLData.filter(WLData => WLData._id !== _id));
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    setWatchListData(prevWLData => prevWLData.filter(WLData => WLData._id !== _id));
+                }
+            })
     }
 
     return (

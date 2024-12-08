@@ -24,12 +24,12 @@ const ReviewDetails = () => {
             });
             return;
         }
-        
+
         const loggedUserName = user.displayName;
         const loggedUserEmail = user.email;
         const newWatchListData = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name, loggedUserEmail, loggedUserName };
 
-        fetch('http://localhost:5000/watch_list', {
+        fetch('https://chill-game-server-tau.vercel.app/watch_list', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'

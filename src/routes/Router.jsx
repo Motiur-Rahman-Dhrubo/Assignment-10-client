@@ -21,16 +21,17 @@ const Router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+                loader: () => fetch('https://chill-game-server-tau.vercel.app/top-rated'),
             },
             {
                 path: "/reviews",
                 element: <AllReviews></AllReviews>,
-                loader: () => fetch('http://localhost:5000/reviews'),
+                loader: () => fetch('https://chill-game-server-tau.vercel.app/reviews'),
             },
             {
                 path: "/review/:id",
                 element: <ReviewDetails></ReviewDetails>,
-                loader: ({ params }) => fetch('http://localhost:5000/reviews')
+                loader: ({ params }) => fetch('https://chill-game-server-tau.vercel.app/reviews')
                     .then(res => res.json())
                     .then(reviews => reviews.find(review => review._id === params.id))
             },
@@ -49,7 +50,7 @@ const Router = createBrowserRouter([
                         <UpdateReview></UpdateReview>
                     </PrivateRoute>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader: ({ params }) => fetch(`https://chill-game-server-tau.vercel.app/reviews/${params.id}`)
             },
             {
                 path: "/myReviews",
@@ -58,7 +59,7 @@ const Router = createBrowserRouter([
                         <MyReviews></MyReviews>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/reviews'),
+                loader: () => fetch('https://chill-game-server-tau.vercel.app/reviews'),
             },
             {
                 path: "/myWatchList",
@@ -67,7 +68,7 @@ const Router = createBrowserRouter([
                         <GameWatchList></GameWatchList>
                     </PrivateRoute>
                 ),
-                loader: () => fetch('http://localhost:5000/watch_list'),
+                loader: () => fetch('https://chill-game-server-tau.vercel.app/watch_list'),
             },
             {
                 path: "/login",

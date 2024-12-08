@@ -20,26 +20,26 @@ const AddReview = () => {
         const newReview = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name }
 
         // send data
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://chill-game-server-tau.vercel.app/reviews', {
             method: 'post',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newReview)
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.insertedId){
-                toast.success("Review Successfully Added", {
-                    position: "top-center",
-                    autoClose: 2000,
-                });
-                e.target.reset();
-                e.target.year.value = "";
-                e.target.genres.value = "";
-            };
-        })
-        .catch((err) => console.error(err));
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success("Review Successfully Added", {
+                        position: "top-center",
+                        autoClose: 2000,
+                    });
+                    e.target.reset();
+                    e.target.year.value = "";
+                    e.target.genres.value = "";
+                };
+            })
+            .catch((err) => console.error(err));
     };
 
     return (
@@ -47,7 +47,7 @@ const AddReview = () => {
             <ToastContainer />
             <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-xl shrink-0 shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400">
                 <form onSubmit={handleAddReview} className="card-body">
-                    
+
                     {/* Game Cover Image */}
                     <div className="form-control" >
                         <label className="label">
@@ -55,7 +55,7 @@ const AddReview = () => {
                         </label>
                         <input name="image" type="text" placeholder="Game Cover Image" className="input input-bordered" required />
                     </div>
-                    
+
                     {/* Game Title */}
                     <div className="form-control">
                         <label className="label">

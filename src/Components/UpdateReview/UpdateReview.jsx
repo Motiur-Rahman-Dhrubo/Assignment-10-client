@@ -21,7 +21,7 @@ const UpdateReview = () => {
         const user_name = e.target.name.value;
         const updateReview = { game_image, game_title, review, rating, publish_year, genres, user_email, user_name }
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://chill-game-server-tau.vercel.app/reviews/${_id}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json'

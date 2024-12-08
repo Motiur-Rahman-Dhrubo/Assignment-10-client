@@ -33,7 +33,7 @@ const AllReviews = () => {
                                     <ReactStars count={5} value={review.rating} size={20} edit={false} activeColor="#ffd700" />
                                 </div>
                                 <p className="text-base font-medium flex-grow">Genres: {review.genres}</p>
-                                <Link to={`/review/${review._id}`} className="btn btn-sm btn-neutral">Explore Details</Link>
+                                <Link to={`/review/${review._id}`} className="btn mt-2 btn-sm btn-neutral">Explore Details</Link>
                             </div>
                         </div>
                     ))
