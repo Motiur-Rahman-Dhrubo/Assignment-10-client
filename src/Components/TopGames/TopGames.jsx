@@ -28,18 +28,18 @@ const TopGames = () => {
                     modules={[EffectCoverflow, Autoplay]}
                     className="mySwiper"
                 >
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-1.png" alt="1" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-2.png" alt="2" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-3.png" alt="3" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-4.png" alt="4" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-5.png" alt="5" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-6.png" alt="6" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-7.png" alt="7" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-8.png" alt="8" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-9.png" alt="9" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-10.png" alt="10" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-11.png" alt="11" /></SwiperSlide>
-                    <SwiperSlide><img className="aspect-[3/2] rounded-xl" src="/assets/top_games/game-12.png" alt="12" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://i.ytimg.com/vi/XoiERpwyy6Y/maxresdefault.jpg" alt="1" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://image.api.playstation.com/vulcan/ap/rnd/202311/0203/37bd2f7293cecbc4045d33578d487127ccaa1840eb15eeb5.png" alt="2" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYbsjyOPBwwB3FZSA9l-vYZ2GBhT6ZvGrt0g&s" alt="3" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://gideonsgaming.com/wp-content/uploads/2024/04/Helldivers-2-Review.jpg" alt="4" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/11/senua-s-saga-hellblade-2-s-2024-release-window-has-been-a-long-time-coming.jpg" alt="5" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1778820/capsule_616x353.jpg?t=1729824657" alt="6" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/AlanWake2SoundtrackCover.jpg/220px-AlanWake2SoundtrackCover.jpg" alt="7" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8sJSZ8pDKTho7MwAW_CJAD7KVfv6tPuOYKA&s" alt="8" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ7SCLVYUJnFk5R7Svbzelq2duTdBWMHaNkw&s" alt="9" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqEFQV-UEvXw0NLmO7Cm8Y9Y6_JbWoLmgpFw&s" alt="10" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXlpJe-ISuj1uPVmHZaqTXH3PiZTg3QSAZ3A&s" alt="11" /></SwiperSlide>
+                    <SwiperSlide><img className="aspect-[3/2] rounded-xl w-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAyvv41ODkhvfvQmosJHjfZ_lYYUdC_EzL4g&s" alt="12" /></SwiperSlide>
                 </Swiper>
             </div>
         </div>
