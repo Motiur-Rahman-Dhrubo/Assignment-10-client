@@ -1,15 +1,13 @@
-import { useContext } from "react";
-import { ThemeContext } from "../../provider/ThemeProvider";
+import HomeTop from "../HomeTop/HomeTop";
+import Slider from "../Slider/Slider";
 
 
 const Home = () => {
 
-    const { theme, toggleTheme } = useContext(ThemeContext);
-
     return (
-        <div>
-            <h1 className="bg-red-600 text-5xl text-center py-52">this is home</h1>
-            <input type="checkbox" className="toggle theme-controller" onChange={toggleTheme} checked={theme === 'dark'}/>
+        <div className="w-11/12 mx-auto mt-5 min-h-screen">
+            <HomeTop></HomeTop>
+            <Slider></Slider>
         </div>
     );
 };

@@ -41,9 +41,9 @@ const MyReviews = () => {
     }
 
     return (
-        <>
+        <div className="w-11/12 mt-5 mx-auto min-h-screen">
              {userReviews.length > 0 ? (
-                <div className="w-11/12 mt-5 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+                <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                     {
                         userReviews.map(review => (
                             <div key={review._id} className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl shadow-lg bg-[url('/assets/gaming.jpg')] bg-cover bg-center shadow-red-400 p-4 flex flex-col">
@@ -69,8 +69,7 @@ const MyReviews = () => {
                         <h1 className="lg:text-5xl md:text-3xl text-xl font-bold text-center text-red-500">No reviews have been added by you!</h1>
                 </div>
              )}
-        </>
-        
+        </div>
     );
 };
 
