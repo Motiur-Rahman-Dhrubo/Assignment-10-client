@@ -59,7 +59,7 @@ const Login = () => {
             <div className="w-1/2 hidden md:flex">
                 <img src="/assets/login.png" alt="login vector" />
             </div>
-            <div className="md:w-1/2 flex justify-center w-full">
+            <div className="md:w-1/2 flex justify-center w-full lg:justify-end md:justify-start">
                 <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-sm shrink-0 shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400">
                     <form onSubmit={handleSubmit} className="card-body">
 
