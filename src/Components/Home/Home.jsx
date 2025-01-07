@@ -6,6 +6,7 @@ import HighestRatedGame from "../HighestRatedGame/HighestRatedGame";
 import Loading from "../Loading/Loading";
 import TopGames from "../TopGames/TopGames";
 import GameIndustry from "../GameIndustry/GameIndustry";
+import Faq from "../Faq/Faq";
 
 export const HomeContext = createContext();
 
@@ -34,6 +35,7 @@ const Home = () => {
             </HomeContext.Provider>
             <TopGames></TopGames>
             <GameIndustry></GameIndustry>
+            <Faq></Faq>
         </div>
     );
 };

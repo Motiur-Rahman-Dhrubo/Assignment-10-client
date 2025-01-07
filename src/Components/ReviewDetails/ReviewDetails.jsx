@@ -65,12 +65,9 @@ const ReviewDetails = () => {
                 <img src={game_image} alt="game cover image" className="rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full aspect-[5/3] object-cover" />
                 <div className="mt-4 text-black flex flex-col bg-[rgba(255,255,255,0.3)] flex-grow rounded-lg p-1">
                     <h2 className="md:text-2xl text-xl font-bold">Game Title: {game_title}</h2>
+                    <ReactStars count={5} value={rating} size={20} edit={false} activeColor="#ffd700" />
                     <p className="md:text-lg text-base font-medium mt-2">Review Description:</p>
                     <p className="md:text-base text-sm">{review}</p>
-                    <div className="flex gap-2 items-center mt-2">
-                        <p className="md:text-lg text-base font-medium">Ratings:</p>
-                        <ReactStars count={5} value={rating} size={20} edit={false} activeColor="#ffd700" />
-                    </div>
                     <div className="mt-2 flex gap-2">
                         <p className="md:text-lg text-base font-medium w-1/2">Publishing Year: <span className="font-normal">{publish_year}</span></p>
                         <p className="md:text-lg text-base font-medium w-1/2">Genres: <span className="font-normal">{genres}</span></p>

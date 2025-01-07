@@ -59,63 +59,67 @@ const Register = () => {
     }
 
     return (
-        <div className="min-h-screen flex justify-center items-center mt-5 w-11/12 mx-auto">
-            <ToastContainer />
-            <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-sm shrink-0 shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400">
-                <form onSubmit={handleSubmit} className="card-body">
+        <div className="min-h-screen flex justify-center items-center mt-5 w-11/12 mx-auto gap-5 md:flex-row-reverse lg:flex-row">
+            <div className="w-1/2 hidden md:flex">
+                <img src="/assets/sign-up.png" alt="sign-up vector" />
+            </div>
+            <div className="md:w-1/2 flex justify-center w-full">
+                <div className="card rounded-tr-none rounded-bl-none rounded-tl-3xl rounded-br-3xl w-full max-w-sm shrink-0 shadow-lg bg-[url('/assets/gaming1.jpg')] bg-cover bg-center shadow-red-400">
+                    <form onSubmit={handleSubmit} className="card-body">
 
-                    {/* name */}
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-white">Name</span>
-                        </label>
-                        <input name="name" type="text" placeholder="name" className="input input-bordered" required />
-                    </div>
-
-                    {
-                        error.name && (
+                        {/* name */}
+                        <div className="form-control">
                             <label className="label">
-                                <p className="text-red-600">{error.name}</p>
+                                <span className="label-text text-white">Name</span>
                             </label>
-                        )
-                    }
+                            <input name="name" type="text" placeholder="name" className="input input-bordered" required />
+                        </div>
 
-                    {/* email */}
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-white">Email</span>
-                        </label>
-                        <input name="email" type="email" placeholder="email" className="input input-bordered" required />
-                    </div>
+                        {
+                            error.name && (
+                                <label className="label">
+                                    <p className="text-red-600">{error.name}</p>
+                                </label>
+                            )
+                        }
 
-                    {/* photo */}
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-white">Photo URL</span>
-                        </label>
-                        <input name="photo" type="text" placeholder="photo URL" className="input input-bordered" />
-                    </div>
+                        {/* email */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-white">Email</span>
+                            </label>
+                            <input name="email" type="email" placeholder="email" className="input input-bordered" required />
+                        </div>
 
-                    {/* password */}
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text text-white">Password</span>
-                        </label>
-                        <input name="password" type="password" placeholder="password" className="input input-bordered" required />
-                    </div>
+                        {/* photo */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-white">Photo URL</span>
+                            </label>
+                            <input name="photo" type="text" placeholder="photo URL" className="input input-bordered" />
+                        </div>
 
-                    {error.password && (
-                        <label className="label">
-                            <p className="text-red-600">{error.password}</p>
-                        </label>
-                    )}
+                        {/* password */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-white">Password</span>
+                            </label>
+                            <input name="password" type="password" placeholder="password" className="input input-bordered" required />
+                        </div>
 
-                    {/* submit */}
-                    <div className="form-control mt-6 gap-4">
-                        <input className="btn btn-primary" type="submit" value="Register Now" />
-                    </div>
-                    <p className="mt-2 text-white">Already have an account? <Link to="/login" className="link-hover font-bold text-blue-600 bg-white px-1 rounded-lg">Login</Link></p>
-                </form>
+                        {error.password && (
+                            <label className="label">
+                                <p className="text-red-600">{error.password}</p>
+                            </label>
+                        )}
+
+                        {/* submit */}
+                        <div className="form-control mt-6 gap-4">
+                            <input className="btn btn-primary" type="submit" value="Register Now" />
+                        </div>
+                        <p className="mt-2 text-white">Already have an account? <Link to="/login" className="link-hover font-bold text-blue-600 bg-white px-1 rounded-lg">Login</Link></p>
+                    </form>
+                </div>
             </div>
         </div>
     );
