@@ -66,3 +66,14 @@ Here are the key dependencies used in this project:
 - "daisyui": "^4.12.14",
 - "postcss": "^8.4.49",
 - "autoprefixer": "^10.4.20"
+
+## 🛠️ Setup & Installation:
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the Repository:
+
+```
+git clone https://github.com/your-username/chill-gamer.git
+cd chill-gamer
+```
