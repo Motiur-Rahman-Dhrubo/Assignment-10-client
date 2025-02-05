@@ -74,8 +74,8 @@ Follow these steps to run the project locally:
 ### 1️⃣ Clone the Repository:
 
 ```
-git clone https://github.com/your-username/chill-gamer.git
-cd chill-gamer
+git clone https://github.com/Motiur-Rahman-Dhrubo/Assignment-10-client
+cd Assignment-10-client
 ```
 
 ### 2️⃣ Install Dependencies:
