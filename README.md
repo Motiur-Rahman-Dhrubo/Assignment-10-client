@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# Chill Gamer 🎮✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img width="100%" src="./Screenshot_3.png"  />
+</div>
 
-Currently, two official plugins are available:
+### Welcome to Chill Gamer !!!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A user-friendly game review application where users can explore and share reviews of their favorite games. With its clean design and robust functionality, Chill Gamer provides a "chill" experience for all gamers.
 
-## Expanding the ESLint configuration
+## 🚀 Live site URL:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- https://assignment-10-5f987.web.app/
+- https://assignment-10-5f987.firebaseapp.com/
 
-- Configure the top-level `parserOptions` property like this:
+## Bullet points to feature of the project:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- 1. Responsive Design: Seamlessly adapts to mobile, tablet, and desktop views.
+- 2. User Authentication: Login and Register functionality with email-password and Google Authentication.
+- 3. Review Management:  Add, Update, and Delete reviews.
+- 4. Watchlist: Add games to your personalized watchlist and manage them effortlessly.
+- 5. Dark/Light Mode: Switch between themes for a personalized browsing experience.
+- 6. Modern Animations: Smooth transitions using libraries like React Lottie, Typewriter, and Awesome Reveal.
