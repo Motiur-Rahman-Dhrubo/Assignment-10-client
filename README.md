@@ -26,9 +26,9 @@ Chill Gamer is built with modern React-based technologies:
 
 ## 🚀 Core Features:
 
--- ✔ Responsive Design - Works seamlessly on mobile, tablet, and desktop.
--- ✔ User Authentication - Secure login & registration (Email/Google).
--- ✔ Game Review Management - Users can Add, Update, Delete reviews.
--- ✔ Personalized Watchlist - Save your favorite games for later.
--- ✔ Dark/Light Mode - Customize your browsing experience.
--- ✔ Smooth Animations - Powered by React Lottie, Typewriter, and Awesome Reveal.
+✔ Responsive Design - Works seamlessly on mobile, tablet, and desktop.<br>
+✔ User Authentication - Secure login & registration (Email/Google).<br>
+✔ Game Review Management - Users can Add, Update, Delete reviews.<br>
+✔ Personalized Watchlist - Save your favorite games for later.<br>
+✔ Dark/Light Mode - Customize your browsing experience.<br>
+✔ Smooth Animations - Powered by React Lottie, Typewriter, and Awesome Reveal.
