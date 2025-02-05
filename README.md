@@ -77,3 +77,32 @@ Follow these steps to run the project locally:
 git clone https://github.com/your-username/chill-gamer.git
 cd chill-gamer
 ```
+
+### 2️⃣ Install Dependencies:
+
+```
+npm install
+```
+
+### 3️⃣ Setup Firebase:
+
+- Create a Firebase project on Firebase Console.
+- Enable Authentication (Email/Google).
+- Copy your Firebase config and create a .env file:
+
+```
+VITE_apiKey=AIzaSyDVsZVfDb5PGzXjICbR7mpOZT5zh8VK4rU
+VITE_authDomain=assignment-10-5f987.firebaseapp.com
+VITE_projectId=assignment-10-5f987
+VITE_storageBucket=assignment-10-5f987.firebasestorage.app
+VITE_messagingSenderId=590736055991
+VITE_appId=1:590736055991:web:900fc51eb183e209bc3732
+```
+
+### 4️⃣ Run the Development Server"
+
+```
+npm run dev
+```
+
+This will start the project at http://localhost:5173/
