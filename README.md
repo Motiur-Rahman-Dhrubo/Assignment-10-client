@@ -32,3 +32,37 @@ Chill Gamer is built with modern React-based technologies:
 ✔ Personalized Watchlist - Save your favorite games for later.<br>
 ✔ Dark/Light Mode - Customize your browsing experience.<br>
 ✔ Smooth Animations - Powered by React Lottie, Typewriter, and Awesome Reveal.
+
+## 📦 Dependencies:
+
+Here are the key dependencies used in this project:
+
+### 🔹 Frontend Libraries:
+
+- "react": "^18.3.1",
+- "react-dom": "^18.3.1",
+- "react-router-dom": "^7.0.2",
+- "react-icons": "^5.4.0",
+- "react-awesome-slider": "^4.1.0",
+- "react-rating-stars-component": "^2.2.0",
+- "react-simple-typewriter": "^5.0.1",
+- "react-toastify": "^10.0.6",
+- "react-tooltip": "^5.28.0",
+- "swiper": "^11.1.15"
+
+### 🔹 Authentication & Storage:
+
+- "firebase": "^11.0.2",
+- "localforage": "^1.10.0"
+
+### 🔹 Utilities & Sorting:
+
+- "match-sorter": "^8.0.0",
+- "sort-by": "^1.2.0"
+
+### 🔹 Styling:
+
+- "tailwindcss": "^3.4.16",
+- "daisyui": "^4.12.14",
+- "postcss": "^8.4.49",
+- "autoprefixer": "^10.4.20"
