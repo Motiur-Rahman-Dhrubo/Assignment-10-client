@@ -106,3 +106,12 @@ npm run dev
 ```
 
 This will start the project at http://localhost:5173/
+
+## 🔗 Resources & Links:
+
+- 🌐 Live Site: <a href="https://assignment-10-5f987.web.app/" target="_blank">
+    Chill Gamer
+  </a>
+- 📘 Firebase Docs: Firebase Documentation
+- 🎨 Tailwind CSS: Tailwind Docs
+- 🔥 React Router: React Router Docs
