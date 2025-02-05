@@ -112,6 +112,12 @@ This will start the project at http://localhost:5173/
 - 🌐 Live Site: <a href="https://assignment-10-5f987.web.app/" target="_blank">
     Chill Gamer
   </a>
-- 📘 Firebase Docs: Firebase Documentation
-- 🎨 Tailwind CSS: Tailwind Docs
-- 🔥 React Router: React Router Docs
+- 📘 Firebase Docs: <a href="https://firebase.google.com/docs?gad_source=1&gclid=CjwKCAiAtYy9BhBcEiwANWQQL-DbXWI-_w3pwdhut53qzi7hqxihIvHRp_2sG6sO8T903WrROgityhoCs6YQAvD_BwE&gclsrc=aw.ds" target="_blank">
+    Firebase Documentation
+  </a>
+- 🎨 Tailwind CSS: <a href="https://v3.tailwindcss.com/docs/installation" target="_blank">
+    Tailwind Docs
+  </a>
+- 🔥 React Router: <a href="https://reactrouter.com/home" target="_blank">
+    React Router Docs
+  </a>
